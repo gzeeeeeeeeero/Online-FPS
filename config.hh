@@ -27,10 +27,10 @@ inline constexpr  i b_size   {w/map_vis/5};
 inline constexpr  i xo_mm    {b_size};
 inline constexpr  i yo_mm    {h-((mw-map_vis/2 + 1)*b_size)};
 
-inline           color bg      {   0,   0,   0, 255};
-inline           color ray     { 255, 255, 255,  20};
-inline           color wall    {  80,   0,   0, 200};
-inline           color wall2   {   0,   0,   0, 200};
-inline           color space   {   0, 255,   0, 255};
-inline           color white   { 255, 255, 255, 255};
-inline           color outline { 180, 180, 180, 255};
+inline color bg      {   0,   0,   0, 255};
+inline color ray     { 255, 255, 255,  20};
+inline color wall    {  80,   0,   0, 200};
+inline color wall2   {   0,   0,   0, 200};
+inline color space   {   0, 255,   0, 255};
+inline color white   { 255, 255, 255, 255};
+inline color outline { 180, 180, 180, 255};

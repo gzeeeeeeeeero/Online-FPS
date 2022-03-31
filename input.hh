@@ -1,6 +1,12 @@
 #include "core.hh"
 #include "raycast.hh"
 
+#define sym  event.key.keysym.sym
+#define mod  event.key.keysym.mod
+#define mx   event.motion.x
+#define typ  event.type
+#define centre_mouse SDL_WarpMouseInWindow(game.win,cx,cy);
+
 auto cx = w>>1;
 auto cy = h>>1;
 
@@ -88,13 +94,6 @@ void handleInput(){
         FOV-=0.01;
     }
 
-#define sym  event.key.keysym.sym
-#define mod  event.key.keysym.mod
-#define x    event.motion.x
-#define y    event.motion.y
-#define typ  event.type
-#define centre_mouse SDL_WarpMouseInWindow(game.win,cx,cy);
-
     SDL_Event event;
     while(SDL_PollEvent(&event)){
         if( typ == SDL_KEYDOWN)
@@ -102,8 +101,8 @@ void handleInput(){
            (sym == SDLK_q) && (mod & SDLK_RCTRL) ||
            (sym == SDLK_ESCAPE) || typ == SDL_QUIT) exit(0);
         if( typ == SDL_MOUSEMOTION){
-            if(x > cx) rot_R(rot/5);
-       else if(x < cx) rot_L(rot/5);
+            if      (mx > cx) rot_R(rot/5);
+            else if (mx < cx) rot_L(rot/5);
             centre_mouse
         }
     }

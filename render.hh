@@ -31,8 +31,8 @@ void __render_rays(f x1, f y1, vector<vec<float>> rays){
     for(auto i = 0; i < rays.size(); i ++){
         float x22 = (y1 + rays[i].x - l) _;
         float y22 = (x1 + rays[i].y - u) _;
-        if(x22 < 0) x22 = 0;
-        if(y22 < 0) y22 = 0;
+        if(x22 < 0 ) x22 = 0;
+        if(y22 < 0 ) y22 = 0;
         if(x22 > ub) x22 = ub;
         if(y22 > ub) y22 = ub;
         DrawLineF(
